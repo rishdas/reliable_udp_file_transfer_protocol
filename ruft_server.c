@@ -974,7 +974,7 @@ int main(int argc, char *argv[])
 
     
     signal(SIGINT, int_handler);
-    ignore_sigpipe();
+    signal(SIGPIPE, int_handler);
     debg_ofp = fopen(file_name, "w");
     bzero(&pkt, sizeof(pkt));
 
